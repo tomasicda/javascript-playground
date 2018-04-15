@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task 1</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+  //finds the longest sequence of characters in a string
+  findChars("abbbcdeefzzhilkaaaaaaggg");
+
+  function findChars(testValue){
+    var currentChar = "";
+    var previousChar = "";
+    var maxCountChar = "";
+    var countStr = 1;
+    var maxCount = 1;
+
+    for (var i = 0; i < testValue.length; i++) {
+      currentChar = testValue[i];
+      if (currentChar !== previousChar) {
+        countStr = 1;
+        previousChar = currentChar;
+      } else {
+        countStr += 1;
+        if (maxCount < countStr) {
+          maxCount = countStr;
+          maxCountChar = currentChar;
+        }
+      } // console.log("TESTING!!!", previousChar, currentChar, " -------- ", countStr, " ",   maxCountChar, " ", maxCount);
+    } console.log("Final result -------- ",maxCountChar, " ", maxCount);
+  }
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task 1</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+var array1 = [1,2,3,9];
+var array2 = [1,2,4,5,6,7];
+var sum = 8;
+
+testSum(array2, sum);
+
+//simple solution for pair doubles. (Goolge Video)
+function testSum(a1, sum){
+  var low = 0;
+  var high = a1.length-1;
+  var hasPairBool = false;
+
+  while (low < high) {
+    var hasPair =  a1[low] + a1[high];
+    if (hasPair === sum) { hasPairBool = true; }
+    low += 1;
+  }
+  return hasPairBool;
+}
+
+function betterFunc (a1, sum){
+  var previousNums = [];
+
+  for (var i = 0; i < a1.length; i++) {
+    var expectedNumb = sum - a1[i];
+    if (previousNums.includes(expectedNumb)){
+      console.log(previousNums);
+      return true;
+    }
+    else { previousNums.push(a1[i]); }
+  }
+  console.log(previousNums);
+}
+
+
+</script>
+
+  </body>
+</html>

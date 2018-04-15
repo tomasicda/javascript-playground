@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interview Prac</title>
+  </head>
+  <body>
+
+    <h1>Interview Stuff</h1>
+    <button type="button" onclick="countStr()">abcde</button>
+
+    <script>
+      //A function that takes string and checks if their are any double ups of characters.
+      var str = "abbqwertyuioa";
+
+      function countStr(){
+        characters = [], doubles = [];
+
+        for (var i = 0; i < str.length; i++) {
+          if (characters.includes(str[i])){
+            doubles.push(str[i]);
+          }
+          characters.push(str[i]);
+        }
+        console.log("characters that occur multiple times " ,doubles);
+        console.log(characters);
+      }
+    </script>
+
+  </body>
+</html>

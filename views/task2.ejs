@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task 1</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+function findChars (testValue){
+  var charCount = {};
+  for (var i = 0; i < testValue.length; i++) {
+    if (charCount.hasOwnProperty(testValue[i])) {
+      var keys = Object.keys(charCount);
+      var lastValue = keys[keys.length-1];
+        //Check if previous value is same as current value
+        if (testValue[i] === lastValue) {
+          charCount[testValue[i]] += 1;
+        }
+        //else don't add value; as it is not part of the sequence of characters
+    }
+    else {charCount[testValue[i]] = 1;}
+  }
+  console.log(charCount);
+}
+
+findChars("abbcdeeeff");
+
+</script>
+
+  </body>
+</html>
