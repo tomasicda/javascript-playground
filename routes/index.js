@@ -23,6 +23,4 @@ router.get('/task5', function(req, res, next) {
   res.render('task5', { title: 'Express' });
 });
 
-
-
 module.exports = router;
