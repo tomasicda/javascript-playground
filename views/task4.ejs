@@ -9,10 +9,20 @@
 <script type="text/javascript">
 
 var array1 = [1,2,3,9];
-var array2 = [1,2,4,5,6,7];
+var array2 = [1,2,4,5,6];
 var sum = 8;
 
 testSum(array2, sum);
+
+//this soultion works but is very inefficient (nested Loops)
+function qaudraticSolution (ary1, sum){
+  for (var i = 0; i < ary1.length; i++) {
+    for (var j = 1; j < ary1.length; j++) {
+      if (ary1[i] + ary1[j] === sum) {return true;}
+    }
+  }
+  return false;
+}
 
 //simple solution for pair doubles. (Goolge Video)
 function testSum(a1, sum){
@@ -28,9 +38,9 @@ function testSum(a1, sum){
   return hasPairBool;
 }
 
+//best solution here
 function betterFunc (a1, sum){
   var previousNums = [];
-
   for (var i = 0; i < a1.length; i++) {
     var expectedNumb = sum - a1[i];
     if (previousNums.includes(expectedNumb)){
