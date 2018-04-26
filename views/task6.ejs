@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task 1</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+//longest consecutive sequence of numbers in a single array
+(function(){
+  var ary1 = [2,1,6,9,4,3,5,8,];
+  var sequence = [];
+
+  for (var i in ary1.sort()) {
+    if (sequence.length === 0 ) {sequence.push(ary1[i])}
+    else {
+      if (ary1[i] - sequence[sequence.length-1] === 1) {sequence.push(ary1[i])}
+    }
+  } console.log(sequence);
+})();
+
+</script>
+
+  </body>
+</html>
