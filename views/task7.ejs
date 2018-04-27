@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Task 1</title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+
+//Finding the intersecting values within 3 arrays (WhiteBoard Question)
+var a1 = [2,6,9,11,13,17];
+var a2 = [3,6,7,10,13,18];
+var a3 = [4,5,6,9,11,13];
+var intersectingVals = [];
+var x=0, y=0, z=0;
+
+findIntersection(a1,a2,a3);
+
+function findIntersection(a1,a2,a3){
+  while (!oOB()) {
+    console.log(a1[x], a2[y], a3[z]);
+    if (a1[x] === a2[y] && a2[y] === a3[z]) {intersectingVals.push(a1[x]);
+      x++, y++, z++;
+    }
+    else if (a1[x] < a2[y]) x++;
+    else if (a2[y] < a1[x]) y++;
+    else z++;
+  }
+  console.log(intersectingVals);
+}
+//test if any of the indexes are out of bounds.
+function oOB (){
+  return (x>=a1.length || y>=a2.length || z>=a3.length)
+}
+
+</script>
+
+  </body>
+</html>
